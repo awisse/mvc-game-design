@@ -5,7 +5,7 @@ import shutil
 
 TOC_INCLUDE='# Table of contents\n\n[TOC]\n\n'
 STYLE_INCLUDE='<link rel="stylesheet" type="text/css" href="res/style.css">'
-BUILD_FILENAME='MVC Game Design by Wesley.html'
+BUILD_FILENAME='MVC-Game-Design-by-Wesley.html'
 
 if __name__ == '__main__':
     print('checking dependencies...')
@@ -27,9 +27,9 @@ if __name__ == '__main__':
         rawtext = TOC_INCLUDE + ''.join(intext.readlines())
         html = markdown.markdown(
                     rawtext, extensions=[
-                                        'toc', 
+                                        'toc',
                                         'fenced_code',
-                                        'codehilite(guess_lang=False)'
+                                        'codehilite'
                         ]
                     )
     with open(BUILD_FILENAME, 'w') as outtext:
